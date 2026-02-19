@@ -7,8 +7,8 @@ import io.promoflow.core.service.promotion.PromotionConditionService
 import io.promoflow.core.service.promotion.PromotionEffectService
 import io.promoflow.core.service.promotion.PromotionRuleService
 import io.promoflow.core.service.promotion.PromotionService
+import jakarta.transaction.Transactional
 import org.springframework.stereotype.Component
-import org.springframework.transaction.annotation.Transactional
 import java.util.UUID
 
 @Component

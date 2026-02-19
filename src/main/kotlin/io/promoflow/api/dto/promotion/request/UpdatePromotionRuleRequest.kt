@@ -1,7 +1,7 @@
 package io.promoflow.api.dto.promotion.request
 
-import io.promoflow.api.dto.promotion.sub.ConditionRequest
-import io.promoflow.api.dto.promotion.sub.EffectRequest
+import io.promoflow.api.dto.promotion.sub.ConditionDto
+import io.promoflow.api.dto.promotion.sub.EffectDto
 import jakarta.validation.Valid
 import jakarta.validation.constraints.NotNull
 
@@ -10,9 +10,9 @@ data class UpdatePromotionRuleRequest(
     val priority: Int,
 
     @field:Valid
-    val conditions: List<ConditionRequest> = emptyList(),
+    val conditions: List<ConditionDto> = emptyList(),
 
     @field:Valid
     @field:NotNull(message = "Promotion effect must be defined")
-    val effect: EffectRequest
+    val effect: EffectDto
 )

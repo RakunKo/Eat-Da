@@ -5,6 +5,7 @@ import io.promoflow.infrastructure.persistance.entity.user.User
 import io.promoflow.infrastructure.persistance.entity.user.UserStatus
 import jakarta.validation.constraints.Email
 import jakarta.validation.constraints.NotBlank
+import jakarta.validation.constraints.Pattern
 import jakarta.validation.constraints.Size
 
 data class SignupUserRequest(
@@ -24,6 +25,13 @@ data class SignupUserRequest(
 
     @field:Size(max = 255, message = "Profile image must be at most 255 characters")
     val profileImg: String?,
+
+    @field:NotBlank(message = "Phone number must not be blank")
+    @field:Pattern(
+        regexp = "^01[016789][0-9]{7,8}$",
+        message = "Phone number is invalid form."
+    )
+    val phoneNumber: String
 ) {
     fun toEntity(): User =
         User(
@@ -31,5 +39,6 @@ data class SignupUserRequest(
             email = email,
             providerId = providerId,
             activeStatus =  UserStatus.ACTIVE,
+            phoneNumber = phoneNumber
         )
 }

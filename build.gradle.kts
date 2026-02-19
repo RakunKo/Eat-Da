@@ -39,6 +39,9 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.12.6")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.12.6")
 
+    // Redis
+    implementation ("org.springframework.boot:spring-boot-starter-data-redis")
+
     // Jackson
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
@@ -48,6 +51,8 @@ dependencies {
     // QueryDSL
     implementation("com.querydsl:querydsl-jpa:5.1.0:jakarta")
     kapt("com.querydsl:querydsl-apt:5.1.0:jakarta")
+    kapt("jakarta.annotation:jakarta.annotation-api")
+    kapt("jakarta.persistence:jakarta.persistence-api")
 
     // Test
     testImplementation("org.jetbrains.kotlin:kotlin-test")
