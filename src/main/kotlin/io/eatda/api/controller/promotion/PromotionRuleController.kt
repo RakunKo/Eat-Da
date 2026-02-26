@@ -3,7 +3,7 @@ package io.eatda.api.controller.promotion
 import io.eatda.api.dto.promotion.request.CreatePromotionRuleRequest
 import io.eatda.api.dto.common.IdResponse
 import io.eatda.api.dto.promotion.response.GetPromotionRulesResponse
-import io.eatda.core.facade.PromotionRuleFacade
+import io.eatda.core.facade.promotion.PromotionRuleFacade
 import io.eatda.core.handler.handleApi
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus

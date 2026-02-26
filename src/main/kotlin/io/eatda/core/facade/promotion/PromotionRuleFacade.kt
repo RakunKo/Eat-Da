@@ -1,4 +1,4 @@
-package io.eatda.core.facade
+package io.eatda.core.facade.promotion
 
 import io.eatda.api.dto.promotion.request.CreatePromotionRuleRequest
 import io.eatda.api.dto.promotion.response.GetPromotionRulesResponse

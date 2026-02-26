@@ -1,8 +1,10 @@
-package io.eatda.core.facade
+package io.eatda.core.facade.waiting
 
 import io.eatda.api.dto.common.IdResponse
 import io.eatda.api.dto.waiting.request.CreateWaitingRequest
 import io.eatda.api.dto.waiting.response.GetWaitingStatusResponse
+import io.eatda.core.common.exception.ApiException
+import io.eatda.core.common.status.WaitingErrorStatus
 import io.eatda.core.service.store.StoreService
 import io.eatda.core.service.waiting.WaitingService
 import io.eatda.infrastructure.persistance.entity.user.User
@@ -45,5 +47,31 @@ class WaitingFacade(
         return GetWaitingStatusResponse.of(store, waiting, myRank, totalCount)
     }
 
+    @Transactional
+    fun cancelWaiting(
+        id: UUID,
+        user: User
+    ): IdResponse {
+        val store = storeService.getStoreById(id)
+        val waiting = waitingService.cancelWaiting(store, user)
+
+        //알림
+
+        return IdResponse.of(waiting.id)
+    }
+
+    @Transactional
+    fun callWaiting(
+        id: UUID,
+        user: User
+    ): IdResponse {
+        user.isOwner()
+        val store = storeService.getStoreById(id)
+        if(user.id != store.owner.id) throw ApiException(WaitingErrorStatus.OWNER_ACCESS_DENIED)
+
+        val waiting = waitingService.callWaiting(store)
+
+        return IdResponse.of(waiting.id)
+    }
 
 }

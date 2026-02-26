@@ -1,12 +1,12 @@
-package io.eatda.core.facade
+package io.eatda.core.facade.promotion
 
-import io.eatda.api.dto.promotion.params.PromotionParams
 import io.eatda.api.dto.promotion.request.CreatePromotionRequest
 import io.eatda.api.dto.promotion.request.UpdatePromotionDateRequest
 import io.eatda.api.dto.promotion.request.UpdatePromotionNameRequest
 import io.eatda.api.dto.promotion.response.GetPromotionResponse
 import io.eatda.api.dto.promotion.response.GetPromotionsResponse
 import io.eatda.api.dto.common.IdResponse
+import io.eatda.api.dto.promotion.params.PromotionParams
 import io.eatda.core.service.promotion.PromotionConditionService
 import io.eatda.core.service.promotion.PromotionEffectService
 import io.eatda.core.service.promotion.PromotionRuleService

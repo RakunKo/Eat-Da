@@ -1,13 +1,13 @@
 package io.eatda.api.controller.promotion
 
-import io.eatda.api.dto.promotion.params.PromotionParams
 import io.eatda.api.dto.promotion.request.CreatePromotionRequest
 import io.eatda.api.dto.common.IdResponse
+import io.eatda.api.dto.promotion.params.PromotionParams
 import io.eatda.api.dto.promotion.request.UpdatePromotionDateRequest
 import io.eatda.api.dto.promotion.request.UpdatePromotionNameRequest
 import io.eatda.api.dto.promotion.response.GetPromotionResponse
 import io.eatda.api.dto.promotion.response.GetPromotionsResponse
-import io.eatda.core.facade.PromotionFacade
+import io.eatda.core.facade.promotion.PromotionFacade
 import io.eatda.core.handler.handleApi
 import io.eatda.infrastructure.persistance.entity.promotion.PromotionStatus
 import io.eatda.infrastructure.persistance.entity.user.User
